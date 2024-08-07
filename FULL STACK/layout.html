@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .static{
+            border: solid;
+            position: static;
+            
+        }
+        .relative{
+            border: solid;
+            position: relative ;
+            left: 30px;
+           
+        }
+        .fixed{
+            border: solid;
+            bottom: 0px;
+            right: 2px;
+            width: 300px;
+            position: fixed;
+            
+        }
+
+        .parent{
+            border: solid;
+            position: relative ;
+            height: 200px;
+            width: 400px;
+            
+           
+        }
+        .child{
+            border: solid;
+            position: absolute;
+            height: 50px;
+            width: 150px;
+            /* top: 20px; */
+            left: 80px;
+            bottom: 50px;
+
+        }
+        .sticky{
+            position: sticky;
+            border: 2px solid green;
+            padding: 5px;
+            top:0;
+            background-color: aqua;
+        }
+        body{
+            height: 1500vh;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- layout 1.position -->
+     <!-- .static  -->
+
+
+    <div class="static">
+        hai iam a human </div>
+<br><br>
+
+
+        <!-- -relative -->
+        <div class="relative">
+            hai iam a human </div>
+            <br><br>
+
+
+            <!-- -fixed -->
+            <div class="fixed">
+                hai iam a human </div>
+
+                <!-- absolute -->
+                 <br><br>
+                 <div class="parent">
+                    <div class="child">
+                         </div>
+                </div>
+                
+                <!-- sticky  -->
+
+                <br><br>
+                <div class="sticky"> iam a sticky
+                </div>
+                
+
+                <!-- 2-float layout  -->
+                 <div class="fl1"></div>
+                 <div class="fl2"></div>
+                 <div class="fl3"></div>
+
+
+
+        
+</body>
+</html>

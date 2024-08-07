@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container for background image and navbar */
+        .container {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Full-width image */
+        .container img {
+            width: 100%;
+            height: 900px;
+            object-fit: cover;
+        }
+
+        /* Navigation bar styling */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+            position: fixed; /* Fixed positioning to stay at the top */
+            top: 0;
+            width: 100%;
+            z-index: 10; /* Ensure it is on top of the image */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            display: inline; /* Align items horizontally */
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: red;
+        }
+
+        /* Heading styling */
+        h1.hh {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            color: white;
+            position: absolute;
+            top: 150px; /* Adjust top position to avoid overlap with navbar */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 72px;
+        }
+
+        /* Main content styling */
+        .container1 {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: -60px; /* Pull the container1 up to avoid extra space below the image */
+            position: relative;
+            z-index: 5; /* Ensure it is above the background image but below the navbar */
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        main p {
+            margin: 20px 0;
+        }
+
+        .explore-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .explore-button:hover {
+            background-color: red;
+        }
+
+        /* Portfolio section styling */
+        .portfolio {
+            display: flex;
+            justify-content: space-between; /* Distribute space between images */
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allow images to wrap to the next line if needed */
+        }
+
+        .portfolio img {
+            flex: 1 1 calc(33.333% - 10px); /* Make each image take up one-third of the row minus the gap */
+            height: 250px; /* Set a fixed height for images */
+            object-fit: cover; /* Maintain aspect ratio and cover the entire height */
+            max-width: 100%; /* Ensure images don’t exceed their container width */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact section styling */
+        .contact {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact h2 {
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            ul {
+                flex-direction: column;
+                padding-top: 60px; /* Space for fixed navbar on smaller screens */
+            }
+            li {
+                float: none;
+            }
+            h1.hh {
+                font-size: 48px; /* Adjust font size for smaller screens */
+                top: 120px; /* Adjust top position for smaller screens */
+            }
+            header h1 {
+                font-size: 1.5em; /* Adjust font size for smaller screens */
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container2 {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .section {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .section img {
+            width: 100%;
+            height: auto;
+        }
+
+        .section h2 {
+            margin: 10px 0;
+        }
+
+        .section p {
+            font-size: 1rem;
+        }
+
+        .subscribe {
+            margin: 20px 0;
+        }
+
+        .subscribe input {
+            padding: 10px;
+            font-size: 1rem;
+            width: 40%;
+            margin-right: 10px;
+        }
+
+        .subscribe button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .social {
+            margin: 20px 0;
+        }
+
+        .social a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .social img {
+            width: 40px;
+            height: 40px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Anchor at the top of the page -->
+    <a id="home"></a>
+
+    <div class="container">
+        <img src="./prblog.jpg" alt="Background Image">
+        <h1 class="hh">ANSIL S</h1>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="container1">
+        <header>
+            <h1>Vision, Passion & Imagination</h1>
+        </header>
+        <main>
+            <p>"I am deeply passionate about software development and technology, a passion that ignited during my academic journey as I immersed myself in various programming languages and development frameworks. I am eager to explore new technologies and understand complex systems to build scalable, efficient applications. Driven by a vision to push the boundaries of what technology can achieve, I approach problem-solving with creativity and curiosity, aiming to design and develop software that not only meets current needs but also anticipates future challenges and opportunities. My goal is to transform innovative ideas into practical solutions that make a meaningful impact."</p>
+            <a href="#portfolio" class="explore-button">Explore Portfolio</a>
+        </main>
+        <div class="portfolio" id="portfolio">
+            <img src="vision.jpg" alt="ima 1">
+            <img src="passion.jpg" alt="ima 2">
+            <img src="imgagi.jpg" alt="ima 3">
+        </div>
+    </div>
+
+    <div class="container2">
+        <h1>About Me</h1>
+        <div class="content">
+            <div class="section">
+                <img src="bg.jpg" alt="My Background">
+                <h2>My Background</h2>
+                <p>As a recent graduate with a Master of Computer Applications (MCA) degree, I have acquired a robust foundation in computer science and information technology. My academic journey has equipped me with a diverse skill set, including software development, database management, and systems analysis. My coursework has covered a range of topics such as object-oriented programming, web technologies, data structures, algorithms, and network security.</p>
+            </div>
+            <div class="section">
+                <img src="medi.jpg" alt="My Mediums">
+                <h2>My Mediums</h2>
+                <p>My proficiency includes programming languages such as Java, Python, and C++, which I used to develop both desktop and web applications. I am skilled in web technologies like HTML, CSS, and JavaScript, and have worked with modern frameworks such as React.js and Angular to build dynamic user interfaces. My experience with databases includes using MySQL for managing and querying relational databases, as well as SQLite for lightweight solutions. I am familiar with development environments and tools like Eclipse, IntelliJ IDEA, and Visual Studio Code, and I use Git/GitHub for version control.</p>
+            </div>
+            <div class="section">
+                <img src="ins.jpg" alt="My Inspiration">
+                <h2>My Inspiration</h2>
+                <p>My inspiration comes from the transformative power of technology and its ability to solve real-world problems. I am deeply motivated by the stories of innovators who have leveraged their technical skills to create groundbreaking solutions that improve lives and drive progress. The dynamic nature of the tech industry, where new challenges and opportunities continually arise, fuels my passion for learning and growth. I find inspiration in the collaborative spirit of tech communities, where diverse perspectives come together to tackle complex issues and push the boundaries of what’s possible.</p>
+            </div>
+        </div>
+        <div class="subscribe">
+            <input type="email" placeholder="Email Address">
+            <button>Sign Up</button>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/login" target="_blank"><img src="./fb.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/accounts/login" target="_blank"><img src="./insta.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/signin" target="_blank"><img src="yt.png" alt="YouTube"></a>
+        </div>
+    </div>
+
+    <!-- New Contact Section -->
+    <div class="contact" id="contact">
+        <h2>Contact Details</h2>
+        <p>Email: ansil.rt@gmail.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Your Street, Your City, Your Country</p>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 ANSIL.TXT · All Rights Reserved</p>
+    </footer>
+</body>
+</html>

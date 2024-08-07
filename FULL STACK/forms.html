@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <form action="">
+    
+    <!-- label and input -->
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="first" value="" placeholder="Enter the first name">
+    <br><br>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="second" value="" placeholder="Enter the last name">
+
+    <!-- select and option  -->
+     <br><br>
+
+    <label for="cars">Select a Car</label>
+    <select name="Cars" id="cars" >
+        <option value="">BMW</option>
+        <option value="">BENZ</option>
+        <option value="">FORD</option>
+        <option value="">TOYOTA</option>
+    </select>
+
+    <!-- textarea  -->
+<br><br>
+    <label for="tarea">Enter your opinion</label>
+    <br>
+    <textarea name="" id="tarea" rows="5" cols="20"></textarea>
+
+    <!-- button  -->
+
+    <br><br>
+    <button type="button" onclick="alert('Sucessfully Submitted')">SUBMIT</button>
+
+    <!-- fieldset and legend  -->
+     <br><br><br>
+     <fieldset>
+        <legend>PERSONAL INFORMATION</legend>
+        <label for="fname">First Name</label>
+    <input type="text" id="fname" name="first" value="" placeholder="Enter the first name">
+    <br><br>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="second" value="" placeholder="Enter the last name">
+    <br><br>
+    <button type="button" onclick="alert('Sucessfully Submitted')">SUBMIT</button>
+
+     </fieldset>
+
+     <!-- datalist  -->
+
+     <br><br>
+     <label for="brow">BROWSERS</label>
+     <input list="BROWSERS" id="brow">
+     <datalist id="BROWSERS">
+        <option value="Chrome"></option>
+        <option value="Brave"></option>
+        <option value="opera"></option>
+        <option value="Firefox"></option>
+
+     </datalist>
+
+     <!-- optgroup  -->
+      <br><br>
+      <label for="car">Select a car</label>
+      <select name="car" id="car">
+      <optgroup label="Sweedish">
+        <option value="Volvo">volvo</option>
+        <option value="saab">saab</option>
+      </optgroup>
+
+      <optgroup label="German cars">
+      <option value="BENZ">BENZ</option>
+      <option value="AUDI">AUDI</option>
+    </optgroup>
+      </select>
+     
+     
+
+
+</form>
+</body>
+</html>
